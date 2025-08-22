@@ -5,4 +5,5 @@ rich==13.7.1
 SpeechRecognition==3.10.3
 gTTS==2.5.1
 gradio==4.44.0
-pydub==0.25.1
+pydub==0.25.1openai==1.40.3
+openai==1.40.3
