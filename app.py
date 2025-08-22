@@ -77,7 +77,7 @@ if user_input := st.chat_input("Say something to Artia..."):
 
     st.session_state["messages"].append({"role": "assistant", "content": full_response})
 
-# 🎙️ Voice input button (fix with components)
+# 🎙️ Voice input (browser recording only - demo)
 components.html(
     """
     <button onclick="recordAndSend()">🎤 Record Voice (5s)</button>
@@ -105,11 +105,11 @@ components.html(
     height=100,
 )
 
-# 🔊 Voice output (TTS)
+# 🔊 Voice output (TTS using browser speechSynthesis)
 if st.button("🔊 Read last response"):
     if st.session_state["messages"] and st.session_state["messages"][-1]["role"] == "assistant":
         last_reply = st.session_state["messages"][-1]["content"]
-        safe_reply = remove_emojis(last_reply)  # ✅ Emojis removed for TTS
+        safe_reply = remove_emojis(last_reply)
         components.html(
             f"""
             <script>
