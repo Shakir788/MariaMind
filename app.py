@@ -4,6 +4,26 @@ import streamlit as st
 from openai import OpenAI
 from dotenv import load_dotenv
 import streamlit.components.v1 as components
+import streamlit as st
+
+# Hide Streamlit's default menu and footer
+hide_streamlit_style = """
+    <style>
+    #MainMenu {visibility: hidden;}
+    footer {visibility: hidden;}
+    footer:after {
+        content:'💖 Built by Shakir — for Artchen, with love.';
+        visibility: visible;
+        display: block;
+        position: relative;
+        text-align: center;
+        padding: 10px;
+        font-size: 14px;
+        color: #888;
+    }
+    </style>
+"""
+st.markdown(hide_streamlit_style, unsafe_allow_html=True)
 
 # ✅ Function to remove emojis for TTS
 def remove_emojis(text):
