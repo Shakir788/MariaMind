@@ -232,3 +232,6 @@ ENV/
 *.log
 *.sqlite3
 *.db
+.env
+.env.*
+.venv/
